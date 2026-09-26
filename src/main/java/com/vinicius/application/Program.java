@@ -1,10 +1,14 @@
 package com.vinicius.application;
 
-import com.vinicius.jogoTabuleiro.Tabuleiro;
+import com.vinicius.xadrez.PartidaXadrez;
 
 public class Program {
     public static void main(String[] args) {
 
-        Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+        PartidaXadrez partidaXadrez = new PartidaXadrez();
+        UI.printTabuleiro(partidaXadrez.getPeca()); // cria classe User Interface pra print do tabuleiro
+
+
+
     }
 }
