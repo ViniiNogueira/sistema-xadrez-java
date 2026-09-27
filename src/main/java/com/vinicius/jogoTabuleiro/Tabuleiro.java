@@ -1,6 +1,6 @@
 package com.vinicius.jogoTabuleiro;
 
-import com.vinicius.jogoTabuleiro.ExceptionsTabuleiro.TabuleiroException;
+import com.vinicius.Exceptions.TabuleiroException;
 
 public class Tabuleiro {
 

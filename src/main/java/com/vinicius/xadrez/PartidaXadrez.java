@@ -1,7 +1,5 @@
 package com.vinicius.xadrez;
 
-import com.vinicius.jogoTabuleiro.Peca;
-import com.vinicius.jogoTabuleiro.Posicao;
 import com.vinicius.jogoTabuleiro.Tabuleiro;
 import com.vinicius.xadrez.pecas.Rei;
 import com.vinicius.xadrez.pecas.Torre;
@@ -26,10 +24,14 @@ public class PartidaXadrez {
         return matriz;
     }
 
+    private void conversorDePosicao(char coluna, int linha , PecaXadrez peca ) {
+        tabuleiro.lugarPeca(peca , new XadrezPosicao(coluna, linha).paraPosicao());
+    }
+
     private void inicializaPecas(){
-        tabuleiro.lugarPeca(new Torre(tabuleiro, Cores.BRANCO) , new Posicao(2,1));
-        tabuleiro.lugarPeca(new Rei(tabuleiro, Cores.PRETO) , new Posicao(0,4));
-        tabuleiro.lugarPeca(new Rei(tabuleiro, Cores.BRANCO) , new Posicao(7,4));
+        conversorDePosicao('b' ,6 ,new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('e' ,8 ,new Rei(tabuleiro, Cores.PRETO));
+        conversorDePosicao('e' ,1 ,new Torre(tabuleiro, Cores.BRANCO));
     }
 
 

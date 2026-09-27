@@ -1,4 +1,4 @@
-package com.vinicius.jogoTabuleiro.ExceptionsTabuleiro;
+package com.vinicius.Exceptions;
 
 public class TabuleiroException extends RuntimeException {
     private static final long serialVersionUID = 1L;
