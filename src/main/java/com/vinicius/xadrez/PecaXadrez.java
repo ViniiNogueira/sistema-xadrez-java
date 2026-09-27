@@ -3,18 +3,16 @@ package com.vinicius.xadrez;
 import com.vinicius.jogoTabuleiro.Peca;
 import com.vinicius.jogoTabuleiro.Tabuleiro;
 
-import java.awt.*;
-
 public class PecaXadrez extends Peca {
 
-    private Color  color;
+    private Cores color;
 
-    public PecaXadrez(Color color, Tabuleiro tabuleiro) {
+    public PecaXadrez(Tabuleiro tabuleiro, Cores color) {
         super(tabuleiro);
         this.color = color;
     }
 
-    public Color getColor() {
+    public Cores getColor() {
         return color;
     }
 
