@@ -29,9 +29,19 @@ public class PartidaXadrez {
     }
 
     private void inicializaPecas(){
-        conversorDePosicao('b' ,6 ,new Torre(tabuleiro, Cores.BRANCO));
-        conversorDePosicao('e' ,8 ,new Rei(tabuleiro, Cores.PRETO));
-        conversorDePosicao('e' ,1 ,new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('c', 1, new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('c', 2, new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('d', 2, new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('e', 2, new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('e', 1, new Torre(tabuleiro, Cores.BRANCO));
+        conversorDePosicao('d', 1, new Rei(tabuleiro, Cores.BRANCO));
+
+        conversorDePosicao('c', 7, new Torre(tabuleiro, Cores.PRETO));
+        conversorDePosicao('c', 8, new Torre(tabuleiro, Cores.PRETO));
+        conversorDePosicao('d', 7, new Torre(tabuleiro, Cores.PRETO));
+        conversorDePosicao('e', 7, new Torre(tabuleiro, Cores.PRETO));
+        conversorDePosicao('e', 8, new Torre(tabuleiro, Cores.PRETO));
+        conversorDePosicao('d', 8, new Rei(tabuleiro, Cores.PRETO));
     }
 
 
