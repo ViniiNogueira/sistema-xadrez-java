@@ -1,5 +1,8 @@
 package com.vinicius.xadrez;
 
+import com.vinicius.Exceptions.XadrezException;
+import com.vinicius.jogoTabuleiro.Peca;
+import com.vinicius.jogoTabuleiro.Posicao;
 import com.vinicius.jogoTabuleiro.Tabuleiro;
 import com.vinicius.xadrez.pecas.Rei;
 import com.vinicius.xadrez.pecas.Torre;
@@ -22,6 +25,32 @@ public class PartidaXadrez {
             }
         }
         return matriz;
+    }
+
+    public PecaXadrez executadorDeMovimentos( XadrezPosicao posicaoOrigem , XadrezPosicao posicaoFinal) {
+        Posicao origem = posicaoOrigem.paraPosicao();
+        Posicao finall = posicaoFinal.paraPosicao();
+
+        //serve pra validar se a posicao de origem existe
+        validaPosicaoDeOrigem(origem);
+
+        Peca pecaCapturada = realizaMovimento(origem, finall);
+        return (PecaXadrez) pecaCapturada;
+    }
+
+    //metodo auxiliar
+    private void validaPosicaoDeOrigem(Posicao posicao) {
+        if (!tabuleiro.AquiTemUmaPeca(posicao)) {
+            throw new XadrezException("nao tem uma peça nessa posicao de origem");
+        }
+    }
+
+    private Peca realizaMovimento(Posicao origem, Posicao finall) {
+        Peca p = tabuleiro.removePeca(origem);
+        Peca pecaCapturada = tabuleiro.removePeca(finall);
+
+        tabuleiro.lugarPeca(p ,finall);
+        return pecaCapturada;
     }
 
     private void conversorDePosicao(char coluna, int linha , PecaXadrez peca ) {
