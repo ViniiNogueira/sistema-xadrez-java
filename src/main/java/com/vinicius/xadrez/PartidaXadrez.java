@@ -43,6 +43,10 @@ public class PartidaXadrez {
         if (!tabuleiro.AquiTemUmaPeca(posicao)) {
             throw new XadrezException("nao tem uma peça nessa posicao de origem");
         }
+
+        if (!tabuleiro.getPecas(posicao).haMovimentosPossiveis()) {
+            throw new XadrezException("nao existe movimentos possiveis para a peça escolhida");
+        }
     }
 
     private Peca realizaMovimento(Posicao origem, Posicao finall) {
